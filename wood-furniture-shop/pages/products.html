@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sản Phẩm - STEVE JOB VN.</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/products.css">
+</head>
+<body>
+  
+  <div id="header-container"></div>
+
+  <!-- Tiêu đề trang -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Sản Phẩm Của Chúng Tôi</h1>
+      <p>Lựa chọn những thiết kế tốt nhất cho không gian sống</p>
+    </div>
+  </section>
+
+  <!-- Bố cục danh sách sản phẩm -->
+  <section class="products-catalog container">
+    <aside class="sidebar-filters">
+      <h3>Tìm kiếm</h3>
+      <input type="text" id="search-input" placeholder="Tên sản phẩm..." class="search-input">
+      
+      <h3 class="mt-40">Danh mục</h3>
+      <ul id="category-filter" class="filter-list">
+        <li><a href="#" class="active" data-id="all">Tất cả</a></li>
+        <!-- Load by JS -->
+      </ul>
+
+      <h3 class="mt-40">Mức giá</h3>
+      <select id="price-filter" class="price-select">
+        <option value="all">Tất cả mức giá</option>
+        <option value="under10">Dưới 10 triệu</option>
+        <option value="10to20">10 triệu - 20 triệu</option>
+        <option value="over20">Trên 20 triệu</option>
+      </select>
+    </aside>
+
+    <main class="products-main">
+      <div class="products-toolbar">
+        <span id="product-count">Đang tải...</span>
+        <select id="sort-filter" class="sort-select">
+          <option value="default">Sắp xếp mặc định</option>
+          <option value="price-asc">Giá: Thấp đến Cao</option>
+          <option value="price-desc">Giá: Cao đến Thấp</option>
+        </select>
+      </div>
+
+      <div class="products-grid" id="catalog-grid">
+        <!-- Render bằng JS -->
+      </div>
+    </main>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/products.js"></script>
+</body>
+</html>

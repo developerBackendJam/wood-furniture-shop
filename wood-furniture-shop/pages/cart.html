@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giỏ Hàng - STEVE JOB VN.</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/cart.css">
+</head>
+<body>
+  
+  <div id="header-container"></div>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Giỏ Hàng Của Bạn</h1>
+    </div>
+  </section>
+
+  <section class="container cart-section">
+    <div id="cart-empty-message" style="display: none; text-align: center; padding: 50px 0;">
+      <h2>Giỏ hàng của bạn đang trống</h2>
+      <a href="products.html" class="btn mt-40">Tiếp tục mua sắm</a>
+    </div>
+
+    <div class="cart-layout" id="cart-layout" style="display: none;">
+      <div class="cart-items">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Sản Phẩm</th>
+              <th>Đơn Giá</th>
+              <th>Số Lượng</th>
+              <th>Thành Tiền</th>
+              <th>Thao Tác</th>
+            </tr>
+          </thead>
+          <tbody id="cart-tbody">
+            <!-- Render bằng JS -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="cart-summary">
+        <h3>Tóm Tắt Đơn Hàng</h3>
+        <div class="summary-row">
+          <span>Tạm tính</span>
+          <span id="subtotal">0 ₫</span>
+        </div>
+        <div class="summary-row">
+          <span>Giao hàng</span>
+          <span>Miễn phí</span>
+        </div>
+        <div class="summary-row total-row">
+          <span>Tổng cộng</span>
+          <span id="total">0 ₫</span>
+        </div>
+        <a href="checkout.html" class="btn btn-full">Tiến hành thanh toán</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-container"></div>
+
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/cart.js"></script>
+</body>
+</html>
