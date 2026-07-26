@@ -1,4 +1,4 @@
-// cart.js - Quản lý giỏ hàng
+﻿// cart.js - Quản lý giỏ hàng
 
 document.addEventListener("DOMContentLoaded", async () => {
   renderCart();

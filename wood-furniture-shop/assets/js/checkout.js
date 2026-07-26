@@ -1,4 +1,4 @@
-// checkout.js - Xử lý thanh toán
+﻿// checkout.js - Xử lý thanh toán
 
 document.addEventListener("DOMContentLoaded", async () => {
   const cart = getCart();
@@ -32,9 +32,34 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // Xử lý submit form
   const form = document.getElementById("checkout-form");
-  form.addEventListener("submit", (e) => {
+  form.addEventListener("submit", async (e) => {
     e.preventDefault();
     
+    // Kiểm tra và cập nhật tồn kho (stock)
+    let allProducts = await fetchProducts();
+    let isStockValid = true;
+
+    cart.forEach(cartItem => {
+      const product = allProducts.find(p => p.id === cartItem.productId);
+      if (product && product.stock < cartItem.quantity) {
+        isStockValid = false;
+        alert(`Sản phẩm "${product.name}" không đủ số lượng (chỉ còn ${product.stock}).`);
+      }
+    });
+
+    if (!isStockValid) return;
+
+    // Trừ số lượng tồn kho
+    cart.forEach(cartItem => {
+      const productIndex = allProducts.findIndex(p => p.id === cartItem.productId);
+      if (productIndex !== -1) {
+        allProducts[productIndex].stock -= cartItem.quantity;
+      }
+    });
+    
+    // Lưu lại mảng products đã cập nhật vào localStorage
+    localStorage.setItem('wood_shop_products', JSON.stringify(allProducts));
+
     // Thu thập data (nếu có backend thì gửi lên đây)
     const orderData = {
       fullname: document.getElementById('fullname').value,

@@ -8,7 +8,7 @@
   --text-dark: #333333;
   --text-light: #FFFFFF;
   --border-color: #E0E0E0;
-  
+
   --font-main: 'Inter', 'Roboto', sans-serif;
   --transition: all 0.3s ease;
   --container-width: 1200px;
@@ -66,7 +66,7 @@ img {
 
 .btn:hover {
   background-color: #6d4621;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btn-outline {
@@ -88,7 +88,7 @@ img {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .header-container {
@@ -98,7 +98,7 @@ img {
 }
 
 .logo a {
-  font-size: 24px;
+  font-size: 40px;
   font-weight: 700;
   letter-spacing: 2px;
 }
@@ -208,7 +208,7 @@ img {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   .main-nav ul {
     gap: 15px;
   }

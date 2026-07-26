@@ -1,4 +1,4 @@
-// products.js - Logic hiển thị và lọc danh mục sản phẩm
+﻿// products.js - Logic hiển thị và lọc danh mục sản phẩm
 
 let allProducts = [];
 let allCategories = [];

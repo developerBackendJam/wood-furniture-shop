@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Đăng nhập hoặc đăng ký tài khoản An Mộc để trải nghiệm mua sắm nội thất tuyệt vời nhất.">
+  <meta name="keywords" content="đăng nhập, đăng ký, tài khoản, An Mộc">
+  <title>Đăng Nhập - An Mộc</title>
+  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+  
+  <!-- Header -->
+  <div id="header-container"></div>
+
+  <!-- Main Content -->
+  <main class="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full bg-white p-8 rounded-lg shadow-lg">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-extrabold text-amber-900" id="form-title">Đăng Nhập</h2>
+        <p class="mt-2 text-sm text-gray-600" id="form-subtitle">Chào mừng bạn quay trở lại với An Mộc</p>
+      </div>
+
+      <!-- Auth Form -->
+      <form class="space-y-6" id="auth-form" onsubmit="handleAuthSubmit(event)">
+        <!-- Input field: Name (Only for register) -->
+        <div id="name-field" class="hidden">
+          <label for="name" class="block text-sm font-medium text-gray-700">Họ và tên</label>
+          <div class="mt-1">
+            <input id="name" name="name" type="text" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm" placeholder="Nhập họ và tên...">
+          </div>
+        </div>
+
+        <!-- Input field: Email -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Địa chỉ Email *</label>
+          <div class="mt-1">
+            <input id="email" name="email" type="email" autocomplete="email" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm" placeholder="Nhập địa chỉ email...">
+          </div>
+        </div>
+
+        <!-- Input field: Password -->
+        <div>
+          <label for="password" class="block text-sm font-medium text-gray-700">Mật khẩu *</label>
+          <div class="mt-1">
+            <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-amber-500 focus:border-amber-500 sm:text-sm" placeholder="Nhập mật khẩu...">
+          </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error-message" class="text-red-500 text-sm hidden"></div>
+
+        <!-- Submit Button -->
+        <div>
+          <button type="submit" id="submit-btn" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-amber-900 hover:bg-amber-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition duration-300">
+            Đăng Nhập
+          </button>
+        </div>
+      </form>
+
+      <!-- Toggle Login/Register -->
+      <div class="mt-6 text-center">
+        <p class="text-sm text-gray-600">
+          <span id="toggle-text">Bạn chưa có tài khoản?</span>
+          <a href="#" id="toggle-btn" class="font-medium text-amber-600 hover:text-amber-500 ml-1" onclick="toggleAuthMode(event)">Đăng ký ngay</a>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer-container"></div>
+
+  <!-- Scripts -->
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/auth.js"></script>
+</body>
+</html>

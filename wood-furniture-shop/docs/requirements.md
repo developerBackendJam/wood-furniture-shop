@@ -1,4 +1,4 @@
-# Yêu cầu dự án (Requirements)
+﻿# Yêu cầu dự án (Requirements)
 
 ## 1. Công nghệ
 - HTML5, CSS3, JavaScript thuần.

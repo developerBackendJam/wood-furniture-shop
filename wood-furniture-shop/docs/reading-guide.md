@@ -1,4 +1,4 @@
-# 📖 Hướng Dẫn Đọc Dự Án
+﻿# 📖 Hướng Dẫn Đọc Dự Án
 
 Tài liệu này hướng dẫn thứ tự đọc file để hiểu toàn bộ dự án **Wood Furniture Shop** từ tổng quan đến chi tiết.
 

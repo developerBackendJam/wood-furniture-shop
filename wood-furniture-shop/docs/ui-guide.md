@@ -1,4 +1,4 @@
-# Hướng dẫn Thiết kế UI (UI Guide)
+﻿# Hướng dẫn Thiết kế UI (UI Guide)
 
 ## 1. Màu sắc chủ đạo (Colors)
 - **Màu nền tối (Primary Dark):** `#1F1F1F` (Sử dụng cho nền Header, Footer, hoặc Dark mode).

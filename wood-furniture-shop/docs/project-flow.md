@@ -1,4 +1,4 @@
-# Luồng hoạt động (Project Flow)
+﻿# Luồng hoạt động (Project Flow)
 
 ## 1. Khởi tạo
 - Khi tải mọi trang, file `utils.js` sẽ chạy hàm `loadComponents()` để tải `header.html` và `footer.html`.

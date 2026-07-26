@@ -1,4 +1,4 @@
-# Tiến độ Dự án (Progress)
+﻿# Tiến độ Dự án (Progress)
 
 - [x] Tạo cấu trúc thư mục
 - [x] Soạn thảo các file tài liệu trong `docs/`

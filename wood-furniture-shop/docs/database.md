@@ -1,4 +1,4 @@
-# Cấu trúc dữ liệu (Database Schema)
+﻿# Cấu trúc dữ liệu (Database Schema)
 
 Dữ liệu được lưu trong các file `.json`.
 

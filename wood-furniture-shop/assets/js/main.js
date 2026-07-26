@@ -1,4 +1,4 @@
-// main.js - Xử lý logic riêng cho trang chủ
+﻿// main.js - Xử lý logic riêng cho trang chủ
 
 document.addEventListener("DOMContentLoaded", async () => {
   await renderCategories();

@@ -1,4 +1,4 @@
-// utils.js - Các hàm dùng chung
+﻿// utils.js - Các hàm dùng chung
 
 // Hàm tải component (Header, Footer)
 async function loadComponents() {
@@ -43,9 +43,19 @@ function setActiveNav() {
 // Fetch dữ liệu sản phẩm
 async function fetchProducts() {
   try {
+    // Để giả lập backend, chúng ta lưu products vào localStorage để có thể cập nhật số lượng tồn kho (stock)
+    const storedProducts = localStorage.getItem('wood_shop_products');
+    if (storedProducts) {
+      return JSON.parse(storedProducts);
+    }
+
     const res = await fetch('../database/products.json');
     if (!res.ok) throw new Error("Network response was not ok");
-    return await res.json();
+    const products = await res.json();
+    
+    // Lưu lần đầu tiên vào localStorage
+    localStorage.setItem('wood_shop_products', JSON.stringify(products));
+    return products;
   } catch (error) {
     console.error("Lỗi khi tải sản phẩm:", error);
     return [];
