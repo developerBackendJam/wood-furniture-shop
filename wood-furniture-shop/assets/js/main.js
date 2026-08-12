@@ -1,17 +1,17 @@
-﻿// main.js - Xử lý logic riêng cho trang chủ
+﻿
 
 document.addEventListener("DOMContentLoaded", async () => {
   await renderCategories();
   await renderFeaturedProducts();
 });
 
-// Hiển thị danh mục
+
 async function renderCategories() {
   const container = document.getElementById("categories-grid");
   if (!container) return;
 
   const categories = await fetchCategories();
-  
+
   if (categories.length === 0) {
     container.innerHTML = "<p>Không có danh mục nào.</p>";
     return;
@@ -19,7 +19,7 @@ async function renderCategories() {
 
   let html = "";
   categories.forEach(cat => {
-    // Dùng ảnh dummy nếu không có
+
     const imgSrc = cat.image || "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=500&q=80";
     html += `
       <div class="category-card" onclick="window.location.href='products.html?category=${cat.id}'">
@@ -34,17 +34,17 @@ async function renderCategories() {
   container.innerHTML = html;
 }
 
-// Hiển thị sản phẩm nổi bật
+
 async function renderFeaturedProducts() {
   const container = document.getElementById("featured-products-grid");
   if (!container) return;
 
   const products = await fetchProducts();
   const categories = await fetchCategories();
-  
-  // Lọc sản phẩm nổi bật
-  const featured = products.filter(p => p.featured).slice(0, 6); // Lấy tối đa 6 sản phẩm
-  
+
+
+  const featured = products.filter(p => p.featured).slice(0, 6);
+
   if (featured.length === 0) {
     container.innerHTML = "<p>Không có sản phẩm nổi bật nào.</p>";
     return;
@@ -52,7 +52,7 @@ async function renderFeaturedProducts() {
 
   let html = "";
   featured.forEach(product => {
-    // Lấy tên danh mục
+
     const cat = categories.find(c => c.id === product.categoryId);
     const catName = cat ? cat.name : "Nội thất";
     const priceStr = formatCurrency(product.price);

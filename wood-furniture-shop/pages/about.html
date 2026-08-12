@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -8,15 +8,11 @@
     content="Về chúng tôi - An Mộc Cửa hàng nội thất gỗ cao cấp mang đến không gian sống sang trọng, ấm cúng và bền vững.">
   <meta name="keywords" content="giới thiệu, nội thất, nội thất gỗ, bàn ghế gỗ, An Mộc">
   <title>Giới Thiệu - An Mộc</title>
-  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <link rel="icon" type="image/png" href="../assets/images/anmoc.webp">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/main.css">
 
-  <!-- Tailwind CSS cho layout linh hoạt -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-    /* CSS Animation tùy chỉnh để thoả mãn tiêu chí ảnh động */
     @keyframes float {
       0% {
         transform: translateY(0px);
@@ -34,90 +30,228 @@
     .animated-image {
       animation: float 4s ease-in-out infinite;
     }
+
+
+    .about-hero {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 50px 0 40px;
+      text-align: center;
+    }
+
+    .about-hero h1 {
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .about-hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+
+
+    .about-content {
+      padding: 80px 0;
+      background-color: var(--bg-light);
+    }
+
+    .about-content-inner {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 24px;
+    }
+
+    .about-text p {
+      color: #555;
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .about-image-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .about-image-wrap img {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+      border: 4px solid var(--accent-color);
+    }
+
+    .about-image-caption {
+      margin-top: 16px;
+      font-size: 13px;
+      color: #888;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+
+    .about-values {
+      background-color: var(--bg-white);
+      padding: 80px 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .about-values h2 {
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text-dark);
+      margin-bottom: 50px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      text-align: center;
+    }
+
+    .value-card {
+      padding: 40px 24px;
+      background-color: var(--bg-light);
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      transition: var(--transition);
+    }
+
+    .value-card:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .value-number {
+      width: 64px;
+      height: 64px;
+      background-color: #f5e8d8;
+      color: var(--accent-color);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .value-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+    }
+
+    .value-card p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .about-content-inner {
+        flex-direction: column;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-hero h1 {
+        font-size: 30px;
+      }
+    }
   </style>
 </head>
 
-<body class="bg-gray-50">
+<body>
 
-  <!-- Header -->
+
   <div id="header-container"></div>
 
-  <!-- Hero Section -->
-  <section class="bg-[#1F1F1F] text-white py-20">
-    <div class="container mx-auto px-4 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Câu Chuyện Của An Mộc</h1>
-      <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90">Chúng tôi mang vẻ đẹp của tự nhiên <br>vào trong không
-        gian
-        sống của bạn.</p>
+
+  <section class="about-hero">
+    <div class="container">
+      <h1>Câu Chuyện Của An Mộc</h1>
+      <p>Chúng tôi mang vẻ đẹp của tự nhiên<br>vào trong không gian sống của bạn.</p>
     </div>
   </section>
 
-  <!-- Content Section -->
-  <section class="py-16">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-      <div class="md:w-1/2">
-        <h2 class="text-3xl font-bold text-amber-900 mb-6">Tầm Nhìn & Sứ Mệnh</h2>
-        <p class="text-gray-700 leading-relaxed mb-4">
+
+  <section class="about-content">
+    <div class="container about-content-inner">
+      <div class="about-text">
+        <h2>Tầm Nhìn &amp; Sứ Mệnh</h2>
+        <p>
           Tại <strong>An Mộc</strong>, chúng tôi tin rằng mỗi món đồ nội thất không chỉ là vật dụng, mà còn là một
           tác phẩm nghệ thuật, mang trong mình hơi thở của thiên nhiên và tâm huyết của người thợ mộc.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-6">
+        <p>
           Được thành lập từ năm 1990, sứ mệnh của chúng tôi là cung cấp những sản phẩm nội thất gỗ cao cấp, bền vững và
           thân thiện với môi trường. Chúng tôi cam kết sử dụng 100% gỗ rừng trồng được cấp phép, đảm bảo chất lượng từ
           khâu chọn nguyên liệu đến khi thành phẩm.
         </p>
-        <a href="products.html"
-          class="inline-block bg-amber-900 text-white px-8 py-3 rounded hover:bg-amber-800 transition duration-300">Khám
-          Phá Sản Phẩm</a>
+        <a href="products.html" class="btn" style="margin-top: 10px;">Khám Phá Sản Phẩm</a>
       </div>
 
-      <div class="md:w-1/2 flex justify-center">
-        <!-- Sử dụng CSS Animation (Ảnh động) -->
-        <div class="relative">
-          <img class="animated-image w-64 h-64 object-cover rounded-full shadow-lg border-4 border-amber-900"
-            src="https://i.pinimg.com/736x/54/56/08/5456088d8e6ed2464b1bef2551c7bf63.jpg" alt="Hình ảnh gỗ thật">
-          <div class="text-center mt-4 text-sm text-gray-500 font-semibold uppercase tracking-wider">
-            Sức Sống Từ Gỗ
-          </div>
+      <div class="about-image-wrap">
+        <img class="animated-image" src="https://i.pinimg.com/736x/54/56/08/5456088d8e6ed2464b1bef2551c7bf63.jpg"
+          alt="Hình ảnh gỗ thật">
+        <div class="about-image-caption">Sức Sống Từ Gỗ</div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="about-values">
+    <div class="container">
+      <h2>Giá Trị Cốt Lõi</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-number">1</div>
+          <h3>Chất Lượng</h3>
+          <p>Sản phẩm được chế tác tỉ mỉ, trải qua quy trình kiểm định nghiêm ngặt.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-number">2</div>
+          <h3>Bền Vững</h3>
+          <p>Bảo vệ môi trường thông qua việc sử dụng vật liệu thân thiện và quy trình xanh.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-number">3</div>
+          <h3>Tận Tâm</h3>
+          <p>Luôn đặt sự hài lòng của khách hàng lên hàng đầu trong mọi dịch vụ.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Giá trị cốt lõi -->
-  <section class="bg-white py-16 border-t border-gray-200">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Giá Trị Cốt Lõi</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div class="p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
-          <div
-            class="w-16 h-16 bg-amber-100 text-amber-900 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-            1</div>
-          <h3 class="text-xl font-bold mb-2">Chất Lượng</h3>
-          <p class="text-gray-600">Sản phẩm được chế tác tỉ mỉ, trải qua quy trình kiểm định nghiêm ngặt.</p>
-        </div>
-        <div class="p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
-          <div
-            class="w-16 h-16 bg-amber-100 text-amber-900 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-            2</div>
-          <h3 class="text-xl font-bold mb-2">Bền Vững</h3>
-          <p class="text-gray-600">Bảo vệ môi trường thông qua việc sử dụng vật liệu thân thiện và quy trình xanh.</p>
-        </div>
-        <div class="p-6 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition">
-          <div
-            class="w-16 h-16 bg-amber-100 text-amber-900 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
-            3</div>
-          <h3 class="text-xl font-bold mb-2">Tận Tâm</h3>
-          <p class="text-gray-600">Luôn đặt sự hài lòng của khách hàng lên hàng đầu trong mọi dịch vụ.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
   <div id="footer-container"></div>
 
-  <!-- Scripts -->
+
   <script src="../assets/js/utils.js"></script>
 </body>
 

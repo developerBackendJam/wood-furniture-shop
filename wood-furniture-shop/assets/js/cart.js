@@ -1,4 +1,4 @@
-﻿// cart.js - Quản lý giỏ hàng
+﻿
 
 document.addEventListener("DOMContentLoaded", async () => {
   renderCart();
@@ -25,7 +25,7 @@ async function renderCart() {
 
   cart.forEach(cartItem => {
     const product = products.find(p => p.id === cartItem.productId);
-    if (!product) return; // Bỏ qua nếu không có thông tin sản phẩm
+    if (!product) return;
 
     const itemTotal = product.price * cartItem.quantity;
     subtotal += itemTotal;
@@ -55,8 +55,8 @@ async function renderCart() {
   });
 
   tbody.innerHTML = html;
-  
-  // Cập nhật tóm tắt
+
+
   document.getElementById("subtotal").textContent = formatCurrency(subtotal);
   document.getElementById("total").textContent = formatCurrency(subtotal);
 }
@@ -67,7 +67,7 @@ function updateQty(productId, change) {
   if (itemIndex > -1) {
     cart[itemIndex].quantity += change;
     if (cart[itemIndex].quantity <= 0) {
-      cart.splice(itemIndex, 1); // Xóa nếu <= 0
+      cart.splice(itemIndex, 1);
     }
     saveCart(cart);
     renderCart();

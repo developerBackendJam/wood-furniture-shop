@@ -1,6 +1,4 @@
-﻿// utils.js - Các hàm dùng chung
 
-// Hàm tải component (Header, Footer)
 async function loadComponents() {
   try {
     const headerEl = document.getElementById('header-container');
@@ -20,7 +18,6 @@ async function loadComponents() {
       }
     }
 
-    // Cập nhật số lượng giỏ hàng sau khi tải xong header
     updateCartBadge();
     setActiveNav();
   } catch (error) {
@@ -28,7 +25,7 @@ async function loadComponents() {
   }
 }
 
-// Cập nhật trạng thái active cho menu
+
 function setActiveNav() {
   const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll('.main-nav a');
@@ -40,20 +37,18 @@ function setActiveNav() {
   });
 }
 
-// Fetch dữ liệu sản phẩm
+
 async function fetchProducts() {
   try {
-    // Để giả lập backend, chúng ta lưu products vào localStorage để có thể cập nhật số lượng tồn kho (stock)
-    const storedProducts = localStorage.getItem('wood_shop_products');
-    if (storedProducts) {
-      return JSON.parse(storedProducts);
+
+    const cached = localStorage.getItem('wood_shop_products');
+    if (cached) {
+      return JSON.parse(cached);
     }
 
     const res = await fetch('../database/products.json');
     if (!res.ok) throw new Error("Network response was not ok");
     const products = await res.json();
-    
-    // Lưu lần đầu tiên vào localStorage
     localStorage.setItem('wood_shop_products', JSON.stringify(products));
     return products;
   } catch (error) {
@@ -62,7 +57,7 @@ async function fetchProducts() {
   }
 }
 
-// Fetch dữ liệu danh mục
+
 async function fetchCategories() {
   try {
     const res = await fetch('../database/categories.json');
@@ -74,26 +69,23 @@ async function fetchCategories() {
   }
 }
 
-// Định dạng tiền tệ VNĐ
+
 function formatCurrency(amount) {
   return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
 }
 
-// --- QUẢN LÝ GIỎ HÀNG (LOCAL STORAGE) ---
-
-// Lấy giỏ hàng hiện tại
 function getCart() {
   const cart = localStorage.getItem('wood_shop_cart');
   return cart ? JSON.parse(cart) : [];
 }
 
-// Lưu giỏ hàng
+
 function saveCart(cart) {
   localStorage.setItem('wood_shop_cart', JSON.stringify(cart));
   updateCartBadge();
 }
 
-// Cập nhật số lượng trên icon giỏ hàng ở header
+
 function updateCartBadge() {
   const badge = document.getElementById('cart-badge');
   if (badge) {
@@ -103,7 +95,7 @@ function updateCartBadge() {
   }
 }
 
-// Thêm sản phẩm vào giỏ
+
 function addToCart(productId, quantity = 1) {
   const cart = getCart();
   const existingItemIndex = cart.findIndex(item => item.productId === productId);
@@ -118,7 +110,7 @@ function addToCart(productId, quantity = 1) {
   alert("Đã thêm sản phẩm vào giỏ hàng!");
 }
 
-// Khởi chạy khi DOM tải xong
+
 document.addEventListener("DOMContentLoaded", () => {
   loadComponents();
 });

@@ -1,8 +1,8 @@
-﻿// assets/js/auth.js
+﻿
 
 let isLoginMode = true;
 
-// Hàm chuyển đổi giữa Đăng nhập và Đăng ký
+
 function toggleAuthMode(event) {
   event.preventDefault();
   isLoginMode = !isLoginMode;
@@ -34,7 +34,6 @@ function toggleAuthMode(event) {
   }
 }
 
-// Xử lý gửi form
 function handleAuthSubmit(event) {
   event.preventDefault();
 
@@ -42,7 +41,7 @@ function handleAuthSubmit(event) {
   const password = document.getElementById('password').value.trim();
   const errorMessage = document.getElementById('error-message');
 
-  // Basic Validation
+
   if (!validateEmail(email)) {
     showError('Vui lòng nhập địa chỉ email hợp lệ.');
     return;
@@ -59,17 +58,17 @@ function handleAuthSubmit(event) {
       showError('Vui lòng nhập họ và tên hợp lệ.');
       return;
     }
-    // Giả lập Đăng ký thành công
+
     alert(`Đăng ký thành công tài khoản cho email: ${email}`);
-    // Tự động chuyển về đăng nhập
-    toggleAuthMode({ preventDefault: () => {} });
+
+    toggleAuthMode({ preventDefault: () => { } });
   } else {
-    // Giả lập Đăng nhập thành công
+
     if (email === 'admin@stevejobvn.vn' && password === '123456') {
       alert('Đăng nhập thành công! Chào mừng admin.');
       window.location.href = 'index.html';
     } else {
-      // Giả lập lưu session/localstorage cho user thường
+
       alert('Đăng nhập thành công!');
       window.location.href = 'index.html';
     }
